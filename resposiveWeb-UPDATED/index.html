@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a BBQ master</title>
+    <link rel="stylesheet" href="style.css" />
+
+    
+        
+  </head>
+  <body>
+    <div class="intro">
+      <h1>Learn how to make <strong>the best BBQ ribs</strong> in town</h1>
+      <p>Join us for this live webinar</p>
+      <p class="top-text">Mouthwateringly delicious</p>
+    </div>
+
+    <div id="newCon" class="main-content">
+
+      <h2>Become a BBQ master</h2>
+      <p class="reg">Register Today</p>
+
+      
+
+      <p class="fine-print">
+        By signing up, you agree to receive emails from us. You can unsubscribe
+        at any time.
+      </p>
+
+      <form id="form1" class="form" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="kamrul islam" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button type="submit" class="reg-btn">Register</button>
+        </form>
+        <p>
+            <strong>Sign up</strong> to receive our free guide on how to make the
+            best BBQ ribs. This guide includes tips, tricks, and recipes that will
+            elevate your BBQ game to the next level.
+    
+    
+          </p>
+
+    </div>
+    <script>
+        let form1 = document.getElementById("form1");
+        form1.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if (name && email) {
+                alert(`Thank you for registering, ${name}!`);
+                // Here you can add code to send the data to a server if needed
+            } else {
+                alert("Please fill in all fields.");
+            }
+            let updataedHTML = `
+                <h2 class="updated">Congratulation ${name} for registering!</h2>
+                <p>We are excited to have you join us for the BBQ masterclass.</p>
+                <p>We will send you an email at ${email} with more details.</p>
+                <p class="cau">we will never share your info with anyone else.</p>
+            `;
+            document.querySelector("#newCon").innerHTML = updataedHTML;
+        });
+    </script>
+  </body>
+</html>
